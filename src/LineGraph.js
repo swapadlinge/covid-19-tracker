@@ -91,7 +91,7 @@ const buildChartData = (data, casesType = "cases") => {
   return [casesData, recoveredData, deathsData];
 };
 
-function LineGraph({ country = "Worldwide", ...props }) {
+function LineGraph({ country = "Worldwide", typeCases, ...props }) {
   const [data, setData] = useState({
     cases: [],
     recovered: [],
@@ -129,7 +129,7 @@ function LineGraph({ country = "Worldwide", ...props }) {
   }, [country]);
 
   return (
-    <div className={props.className}>
+    <div >
       {data.cases?.length > 0 && (
         <div className="graph__cards">
           <Card className="graph__card">
